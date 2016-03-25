@@ -10,8 +10,8 @@ import { Meal } from './meal.model';
         <input *ngIf="meal.tapped" type="checkbox" checked (click)="toggleTapped(false)"/>
         <input *ngIf="!meal.tapped" type="checkbox" (click)="toggleTapped(true)"/>
         <label>{{ meal.name }}</label>
-        <label> Total Pints Remaining: {{ meal.volume }}</label>
-        <label> Price: {{ meal.price}}</label>
+        <label> Meal Description: {{ meal.description }}</label>
+        <label> Calories: {{ meal.calories }}</label>
       </div>
       `
   })

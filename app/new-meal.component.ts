@@ -11,7 +11,7 @@ import { MealComponent } from './meal.component';
     <input placeholder="Name" class="col-sm-8 input-lg" #newName>
     <input placeholder="Description" class="col-sm-8 input-lg" #newDescription>
     <input placeholder="calories" class="col-sm-8 input-lg" #newCalories>
-    <button (click)="addKeg(newName, newDescription, newCalories)">Add</button>
+    <button (click)="addMeal(newName, newDescription, newCalories)">Add</button>
   </div>
   `
 
@@ -23,12 +23,12 @@ export class NewMealComponent {
     this.onSubmitNewMeal = new EventEmitter();
 
   }
-  // addMeal(userName: HTMLInputElement,
-  //        userDescription: HTMLInputElement,
-  //        userCalories: HTMLInputElement, {
-  //   this.onSubmitNewMeal.emit(new Meal(0, userName.value, userDescription.value, parseInt(userCalories.value)));
-  //   userName.value = "";
-  //   userDescription.value = "",;
-  //   userCalories.value = "",;
-  // }
+  addMeal(userName: HTMLInputElement,
+         userDescription: HTMLInputElement,
+         userCalories: HTMLInputElement) {
+    this.onSubmitNewMeal.emit(new Meal(0, userName.value, userDescription.value, parseInt(userCalories.value)));
+    userName.value = "";
+    userDescription.value = "";
+    userCalories.value = "";
+  }
 }

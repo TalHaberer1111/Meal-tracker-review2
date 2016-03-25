@@ -12,16 +12,16 @@ import { Meal } from './meal.model';
       <h1>Mr. Meal Tracker</h1>
       </div>
       <meal-list
-        [mealList]="Meals"
+        [mealList]="meals"
         (onMealSelect)="mealWasSelected($event)">
       </meal-list>
     </div>
   `
 })
 export class AppComponent {
-  public Meals: Meal [];  // Meal[] (or Array<Meal>) identifies meals as an array of meals objects
+  public meals: Meal[];  // Meal[] (or Array<Meal>) identifies meals as an array of meals objects
   constructor(){
-    this.Meals = [
+    this.meals = [
       new Meal(0, "Cheeseburger", "Heavy but very very good", 303),
       new Meal(1, "Pizza", "thin-crust so not as many calories", 285),
       new Meal(2, "Cinnamon roll", "It was very sweet but delicious", 310),

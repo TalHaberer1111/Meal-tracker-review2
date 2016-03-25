@@ -8,7 +8,7 @@ import {TappedPipe} from './tapped.pipe';
 @Component({
   selector: 'meal-list',
   inputs: ['mealList'],
-  outputs: ['onmealSelect'],
+  outputs: ['onMealSelect'],
   pipes: [TappedPipe],
   directives: [MealComponent, EditMealDetailsComponent, NewMealComponent],
   template: `
@@ -17,12 +17,12 @@ import {TappedPipe} from './tapped.pipe';
     <option value="tapped">Logged Foods</option>
     <option value="notTapped" selected="selected">Show Not Logged</option>
   </select>
-  <keg-display *ngFor="#currentMeal of mealList | tapped:filterTapped"
+  <meal-display *ngFor="#currentMeal of mealList | tapped:filterTapped"
     (click)="mealClicked(currentMeal)"
     [class.selected]="currentMeal === selectedMeal"
-    [keg]="currentMeal">
-  </keg-display>
-  <edit-meal-details *ngIf="selectedMeal" [keg]="selectedMeal"></edit-meal-details>
+    [meal]="currentMeal">
+  </meal-display>
+  <edit-meal-details *ngIf="selectedMeal" [meal]="selectedMeal"></edit-meal-details>
   <new-meal (onSubmitNewMeal)="createMeal($event)"></new-meal>
   `
 })
