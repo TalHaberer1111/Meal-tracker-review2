@@ -3,15 +3,16 @@ import { MealComponent } from './meal.component';
 import { Meal } from './meal.model';
 import { EditMealDetailsComponent } from './edit-meal-details.component';
 import { NewMealComponent } from './new-meal.component';
-import {TappedPipe} from './tapped.pipe';
+import {HealthyRatingPipe} from './calories.pipe';
 
 @Component({
   selector: 'meal-list',
   inputs: ['mealList'],
   outputs: ['onMealSelect'],
-  pipes: [TappedPipe],
+  pipes: [HealthyRatingPipe],
   directives: [MealComponent, EditMealDetailsComponent, NewMealComponent],
   template: `
+  <label>Healthy Rating:</label>
   <select (change)="onChange($event.target.value)">
     <option value="all">Show All</option>
     <option value="tapped">Logged Foods</option>
@@ -30,7 +31,7 @@ export class MealListComponent {
   public mealList: Meal[];
   public onMealSelect: EventEmitter<Meal>;
   public selectedMeal: Meal;
-  public filterTapped: string = "notTapped";
+  public filterTapped: string = "healthy";
   constructor() {
     this.onMealSelect = new EventEmitter();
   }

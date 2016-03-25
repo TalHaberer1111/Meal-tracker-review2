@@ -9,7 +9,7 @@ import { Meal } from './meal.model';
   template: `
     <div class="container">
     <div class ="header">
-      <h1>Mr. Meal Tracker</h1>
+      <h1>Don't be a fat ass :)</h1>
       </div>
       <meal-list
         [mealList]="meals"
@@ -26,9 +26,10 @@ export class AppComponent {
       new Meal(1, "Pizza", "thin-crust so not as many calories", 285),
       new Meal(2, "Cinnamon roll", "It was very sweet but delicious", 310),
       new Meal(3, "Turkey Sandwhich", "lean turkey on wheat", 178),
-      new Meal(4, "Vanilla Ice Cream Cone", "deliciousness in a cone", 146),
+      new Meal(4, "Vanilla Ice Cream Cone", "deliciousness in a cone, loved every minute of it", 146),
     ];
   }
-  mealWasSelected(clickedMeal: Meal): void{
+  mealWasSelected(clickedMeal: Meal): void {
+    console.log('parent', clickedMeal)
   }
 }
