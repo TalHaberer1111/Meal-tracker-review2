@@ -1,7 +1,7 @@
 /*body {
-  background: url(../images/bee.jpeg) no-repeat;
+  background-image: url(../images/blue.jpg);
   background-size: cover;
-  font-family: 'Quicksand';
+  color: white !important;
 }*/
 
 .header {

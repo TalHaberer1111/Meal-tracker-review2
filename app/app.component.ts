@@ -9,7 +9,7 @@ import { Meal } from './meal.model';
   template: `
     <div class="container">
     <div class ="header">
-      <h1>Don't be a fat ass :)</h1>
+      <h1>My Meal Tracker- For a healthy lifestyle</h1>
       </div>
       <meal-list
         [mealList]="meals"
