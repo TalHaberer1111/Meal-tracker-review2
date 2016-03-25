@@ -7,8 +7,8 @@ import { Meal } from './meal.model';
       inputs: ['meal'],
       template: `
       <div class="mealInfo">
-        <input *ngIf="meal.tapped" type="checkbox" checked (click)="toggleTapped(false)"/>
-        <input *ngIf="!meal.tapped" type="checkbox" (click)="toggleTapped(true)"/>
+        <input *ngIf="meal.healthy" type="checkbox" checked (click)="toggleHealthy(false)"/>
+        <input *ngIf="!meal.healthy" type="checkbox" (click)="toggleHealthy(true)"/>
         <label>{{ meal.name }}</label>
         <label> Meal Description: {{ meal.description }}</label>
         <label> Calories: {{ meal.calories }}</label>
@@ -17,7 +17,7 @@ import { Meal } from './meal.model';
   })
   export class MealComponent {
     public meal: Meal;
-    toggleTapped(setState: boolean){
-      this.meal.tapped = setState;
+    toggleHealthy(setState: boolean){
+      this.meal.healthy = setState;
     }
   }

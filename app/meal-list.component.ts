@@ -12,13 +12,13 @@ import {HealthyRatingPipe} from './calories.pipe';
   pipes: [HealthyRatingPipe],
   directives: [MealComponent, EditMealDetailsComponent, NewMealComponent],
   template: `
-  <label>Healthy Rating:</label>
   <select (change)="onChange($event.target.value)">
-    <option value="all">Show All</option>
-    <option value="tapped">Logged Foods</option>
-    <option value="notTapped" selected="selected">Show Not Logged</option>
+    <option value="showAll">Show All</option>
+    <option value="healthy-over-300">Show unhealthy and over 300 calories</option>
+    <option value="notHealthy-under-300">Show healthy and under 300 calories</option>
   </select>
-  <meal-display *ngFor="#currentMeal of mealList | tapped:filterTapped"
+  <label>Healthy Rating:</label>
+  <meal-display *ngFor="#currentMeal of mealList | healthyRating:filterHealthy"
     (click)="mealClicked(currentMeal)"
     [class.selected]="currentMeal === selectedMeal"
     [meal]="currentMeal">
@@ -31,11 +31,11 @@ export class MealListComponent {
   public mealList: Meal[];
   public onMealSelect: EventEmitter<Meal>;
   public selectedMeal: Meal;
-  public filterTapped: string = "healthy";
+  public filterHealthy: string = "showAll";
   constructor() {
     this.onMealSelect = new EventEmitter();
   }
-  MealClicked(clickedMeal: Meal): void {
+  mealClicked(clickedMeal: Meal): void {
     this.selectedMeal = clickedMeal;
     this.onMealSelect.emit(clickedMeal);
   }
@@ -45,6 +45,6 @@ export class MealListComponent {
     );
   }
   onChange(filterOption) {
-    this.filterTapped = filterOption;
+    this.filterHealthy = filterOption;
   }
 }

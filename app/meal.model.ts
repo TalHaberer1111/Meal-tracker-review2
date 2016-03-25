@@ -1,7 +1,7 @@
 
 // model
 export class Meal {
-  public tapped: boolean = false;
+  public healthy: boolean = false;
   constructor(public MealId: number = 0,
               public name: string,
               public description: string,

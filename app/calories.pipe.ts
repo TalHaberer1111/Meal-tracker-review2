@@ -9,13 +9,13 @@ import {Meal} from './meal.model';
 export class HealthyRatingPipe implements PipeTransform {
   transform(input: Meal[], args) {
     var desiredHealthyRating = args[0];
-    if(desiredHealthyRating === "unhealthy") {
+    if(desiredHealthyRating === "healthy-over-300") {
       return input.filter((meal) => {
-        return meal.calories > 300;
+        return (meal.healthy && meal.calories > 300);
       });
-    } else if (desiredHealthyRating === "healthy") {
+    } else if (desiredHealthyRating === "notHealthy-under-300") {
       return input.filter((meal) => {
-        return meal.calories <= 300;
+        return (!meal.healthy && meal.calories <= 300);
       });
     } else {
         return input;
