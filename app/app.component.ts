@@ -1,6 +1,6 @@
 import { Component, EventEmitter } from 'angular2/core';
 import { MealListComponent} from './meal-list.component';
-import { Keg } from './meal.model';
+import { Meal } from './meal.model';
 
 // parent component
 @Component({
@@ -21,14 +21,14 @@ import { Keg } from './meal.model';
 export class AppComponent {
   public Meals: Meal [];  // Meal[] (or Array<Meal>) identifies meals as an array of meals objects
   constructor(){
-    this.meals = [
-      new meal(0, "Cheeseburger", "Heavy but very very good", 303),
-      new meal(1, "Pizza", "thin-crust so not as many calories", 285),
-      new meal(2, "Cinnamon roll", "It was very sweet but delicious", 254),
-      new meal(3, "Turkey Sandwhich", "lean turkey on wheat", 178),
-      new meal(4, "Vanilla Ice Cream Cone", "deliciousness in a cone", 146),
+    this.Meals = [
+      new Meal(0, "Cheeseburger", "Heavy but very very good", 303),
+      new Meal(1, "Pizza", "thin-crust so not as many calories", 285),
+      new Meal(2, "Cinnamon roll", "It was very sweet but delicious", 310),
+      new Meal(3, "Turkey Sandwhich", "lean turkey on wheat", 178),
+      new Meal(4, "Vanilla Ice Cream Cone", "deliciousness in a cone", 146),
     ];
   }
-  mealWasSelected(clickedMeal: meal): void{
+  mealWasSelected(clickedMeal: Meal): void{
   }
 }

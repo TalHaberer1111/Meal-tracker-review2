@@ -27,18 +27,18 @@ import {TappedPipe} from './tapped.pipe';
   `
 })
 export class MealListComponent {
-  public mealList: meal[];
+  public mealList: Meal[];
   public onMealSelect: EventEmitter<Meal>;
   public selectedMeal: Meal;
   public filterTapped: string = "notTapped";
   constructor() {
     this.onMealSelect = new EventEmitter();
   }
-  MealClicked(clickedKeg: Meal): void {
+  MealClicked(clickedMeal: Meal): void {
     this.selectedMeal = clickedMeal;
     this.onMealSelect.emit(clickedMeal);
   }
-  createMeal(newMeal: meal): void {
+  createMeal(newMeal: Meal): void {
     this.mealList.push(
       new Meal(this.mealList.length, newMeal.name, newMeal.description, newMeal.calories)
     );

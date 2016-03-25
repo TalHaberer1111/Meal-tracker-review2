@@ -6,8 +6,5 @@ export class Meal {
               public name: string,
               public description: string,
               public calories: number) {
-              // public ibu: number,
-              // public volume: number = 124,
-              // public price: number) {
   }
 }

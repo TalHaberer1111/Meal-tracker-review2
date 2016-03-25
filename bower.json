@@ -1,10 +1,10 @@
 {
-  "name": "Jason & Tal",
+  "name":   "Tal",
   "description": "",
   "main": "",
   "license": "ISC",
   "moduleType": [],
-  "homepage": "https://github.com/timmi89/toDoTypsescript",
+  "homepage": "https://github.com/Talh2016/meal_tracker",
   "ignore": [
     "**/.*",
     "node_modules",

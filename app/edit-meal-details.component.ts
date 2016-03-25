@@ -13,6 +13,6 @@ import {Meal} from './meal.model';
   <input [(ngModel)]="meal.calories" class="col-sm-8 input-lg meal-form">
   `
 })
-export class EditmealDetailsComponent {
-  public meal: meal;
+export class EditMealDetailsComponent {
+  public meal: Meal;
 }
