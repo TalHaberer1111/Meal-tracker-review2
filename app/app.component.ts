@@ -1,34 +1,34 @@
 import { Component, EventEmitter } from 'angular2/core';
-import { KegListComponent} from './keg-list.component';
-import { Keg } from './keg.model';
+import { MealListComponent} from './meal-list.component';
+import { Keg } from './meal.model';
 
 // parent component
 @Component({
   selector: 'my-app',
-  directives: [KegListComponent],
+  directives: [MealListComponent],
   template: `
     <div class="container">
     <div class ="header">
-      <h1>Rob and Tal's Taproom</h1>
+      <h1>Mr. Meal Tracker</h1>
       </div>
-      <keg-list
-        [kegList]="kegs"
-        (onKegSelect)="kegWasSelected($event)">
-      </keg-list>
+      <meal-list
+        [mealList]="Meals"
+        (onMealSelect)="mealWasSelected($event)">
+      </meal-list>
     </div>
   `
 })
 export class AppComponent {
-  public kegs: Keg[];  // Keg[] (or Array<Keg>) identifies kegs as an array of Keg objects
+  public Meals: Meal [];  // Meal[] (or Array<Meal>) identifies meals as an array of meals objects
   constructor(){
-    this.kegs = [
-      new Keg(0, "Dark Vador", "Porter", 5, 40, 124, 5),
-      new Keg(1, "IB Waun", "IPA", 9, 60, 124, 5),
-      new Keg(2, "Han Solo", "Amber Ale", 8, 30, 124, 7),
-      new Keg(3, "Princes Lager", "Lager", 10, 45, 124, 7),
-      new Keg(4, "Death Stout", "Irish Stout", 8,30, 124, 9),
+    this.meals = [
+      new meal(0, "Cheeseburger", "Heavy but very very good", 303),
+      new meal(1, "Pizza", "thin-crust so not as many calories", 285),
+      new meal(2, "Cinnamon roll", "It was very sweet but delicious", 254),
+      new meal(3, "Turkey Sandwhich", "lean turkey on wheat", 178),
+      new meal(4, "Vanilla Ice Cream Cone", "deliciousness in a cone", 146),
     ];
   }
-  kegWasSelected(clickedKeg: Keg): void{
+  mealWasSelected(clickedMeal: meal): void{
   }
 }
