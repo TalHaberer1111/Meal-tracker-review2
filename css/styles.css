@@ -30,3 +30,10 @@ h3 {
   color: #4B717F;
   text-shadow: .5 .5 grey;
 }
+
+footer {
+  text-align: center;
+  font-weight: bold;
+  height: 200px;
+  background-color: pink;
+}
