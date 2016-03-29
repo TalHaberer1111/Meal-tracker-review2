@@ -1,5 +1,5 @@
 {
-  "name": "to-do",
+  "name": "meal-tracker",
   "version": "1.0.0",
   "scripts": {
     "start": "npm run tsc:w",
@@ -35,5 +35,16 @@
     "lite-server": "^2.1.0",
     "typescript": "^1.8.2",
     "typings": "^0.6.8"
-  }
+  },
+  "description": "#### _{Meal Tracker app}, {3/25/16}_",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Talh2016/Meal-tracker-review2.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/Talh2016/Meal-tracker-review2/issues"
+  },
+  "homepage": "https://github.com/Talh2016/Meal-tracker-review2#readme"
 }
