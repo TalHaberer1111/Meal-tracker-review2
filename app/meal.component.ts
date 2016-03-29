@@ -9,7 +9,7 @@ import { Meal } from './meal.model';
       <div class="mealInfo">
         <input *ngIf="meal.healthy" type="checkbox" checked (click)="toggleHealthy(false)"/>
         <input *ngIf="!meal.healthy" type="checkbox" (click)="toggleHealthy(true)"/>
-        <label>{{ meal.name }}</label>
+        <label (click)="isSelected = !isSelected" [class.selected]="isSelected">{{ meal.name }}</label>
         <label> Meal Description: {{ meal.description }}</label>
         <label> Calories: {{ meal.calories }}</label>
       </div>
@@ -17,6 +17,7 @@ import { Meal } from './meal.model';
   })
   export class MealComponent {
     public meal: Meal;
+    public isSelected = false;
     toggleHealthy(setState: boolean){
       this.meal.healthy = setState;
     }
