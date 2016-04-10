@@ -8,8 +8,6 @@ import { Meal } from './meal.model';
       template: `
       <div class="mealInfo">
         <label (click)="isSelected = !isSelected" [class.selected]="isSelected">{{ meal.name }}</label>
-        <label> Meal Description: {{ meal.description }}</label>
-        <label> Calories: {{ meal.calories }}</label>
       </div>
       `
   })
