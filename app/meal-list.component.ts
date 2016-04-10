@@ -25,6 +25,7 @@ import {DisplayMealDetailsComponent} from './display-meal-details.component';
     {{currentMeal.name}}
   </div>
   <display-meal-details *ngIf="selectedMeal" [meal]="selectedMeal"></display-meal-details>
+  <edit-meal-details *ngIf="selectedMeal" [meal]="selectedMeal"></edit-meal-details>
   `
 })
 export class MealListComponent {
