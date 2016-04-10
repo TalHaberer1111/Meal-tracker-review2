@@ -11,6 +11,6 @@ import {Meal} from './meal.model';
   </div>
   `
 })
-export class EditMealDetailsComponent {
+export class DisplayMealDetailsComponent {
   public meal: Meal;
 }

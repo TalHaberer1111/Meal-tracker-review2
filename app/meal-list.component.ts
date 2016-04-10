@@ -4,13 +4,14 @@ import { Meal } from './meal.model';
 import { EditMealDetailsComponent } from './edit-meal-details.component';
 import { NewMealComponent } from './new-meal.component';
 import {HealthyRatingPipe} from './calories.pipe';
+import {DisplayMealDetailsComponent} from './display-meal-details.component';
 
 @Component({
   selector: 'meal-list',
   inputs: ['mealList'],
   outputs: ['onMealSelect'],
   pipes: [HealthyRatingPipe],
-  directives: [MealComponent, EditMealDetailsComponent, NewMealComponent],
+  directives: [MealComponent, EditMealDetailsComponent, NewMealComponent, DisplayMealDetailsComponent],
   template: `
   <select (change)="onChange($event.target.value)">
     <option value="showAll">Show All</option>
@@ -23,6 +24,7 @@ import {HealthyRatingPipe} from './calories.pipe';
   >
     {{currentMeal.name}}
   </div>
+  <display-meal-details *ngIf="selectedMeal" [meal]="selectedMeal"></display-meal-details>
   `
 })
 export class MealListComponent {
@@ -35,7 +37,6 @@ export class MealListComponent {
   }
   mealClicked(clickedMeal: Meal): void {
     this.selectedMeal = clickedMeal;
-    console.log(clickedMeal.name);
   }
   createMeal(newMeal: Meal): void {
     this.mealList.push(
