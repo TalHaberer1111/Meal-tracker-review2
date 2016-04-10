@@ -29,7 +29,4 @@ export class AppComponent {
       new Meal(4, "Vanilla Ice Cream Cone", "deliciousness in a cone, loved every minute of it", 146),
     ];
   }
-  mealWasSelected(clickedMeal: Meal): void {
-    console.log('parent', clickedMeal)
-  }
 }
