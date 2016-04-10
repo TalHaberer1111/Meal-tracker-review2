@@ -15,8 +15,8 @@ import {DisplayMealDetailsComponent} from './display-meal-details.component';
   template: `
   <select (change)="onChange($event.target.value)">
     <option value="showAll">Show All</option>
-    <option value="healthy-over-300">Show unhealthy and over 300 calories</option>
-    <option value="notHealthy-under-300">Show healthy and under 300 calories</option>
+    <option value="showHealthy">Show healthy</option>
+    <option value="showUnhealthy">Show unhealthy</option>
   </select>
   <div class="meal-display" *ngFor="#currentMeal of mealList | healthyRating:filterHealthy"
   (click)="mealClicked(currentMeal)"
